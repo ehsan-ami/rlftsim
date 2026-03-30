@@ -2,135 +2,43 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-
-.footer .icon-link {
-    font-size: 25px;
-    color: #000;
-}
-
 .link-block a {
-    margin-top: 5px;
-    margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.dnerf {
-  font-variant: small-caps;
-}
-
-
-.teaser .hero-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
-}
-
-.teaser {
+.publication-title {
   font-family: 'Google Sans', sans-serif;
 }
 
-
-.publication-title {
-}
-
-.publication-banner {
-  max-height: parent;
-
-}
-
-.publication-banner video {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
-  object-fit: fit;
-}
-
-.publication-header .hero-body {
-}
-
-.publication-title {
-    font-family: 'Google Sans', sans-serif;
-}
-
 .publication-authors {
-    font-family: 'Google Sans', sans-serif;
-}
-
-.publication-venue {
-    color: #555;
-    width: fit-content;
-    font-weight: bold;
-}
-
-.publication-awards {
-    color: #ff3860;
-    width: fit-content;
-    font-weight: bolder;
-}
-
-.publication-authors {
+  font-family: 'Google Sans', sans-serif;
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+  color: hsl(204, 86%, 53%);
 }
 
 .publication-authors a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .author-block {
   display: inline-block;
 }
 
-.publication-banner img {
+/* Venue & awards in hero */
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+  font-family: 'Google Sans', sans-serif;
 }
 
-.publication-authors {
-  /*color: #4286f4;*/
-}
-
-.publication-video {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-
-    overflow: hidden;
-    border-radius: 10px !important;
-}
-
-.publication-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.publication-body img {
-}
-
-.results-carousel {
-  overflow: hidden;
-}
-
-.results-carousel .item {
-  margin: 5px;
-  overflow: hidden;
-  padding: 20px;
-  font-size: 0;
-}
-
-.results-carousel video {
-  margin: 0;
-}
-
-.slider-pagination .slider-page {
-  background: #000000;
-}
-
-.eql-cntrb {
-  font-size: smaller;
+.publication-awards {
+  width: fit-content;
+  font-weight: bolder;
+  font-family: 'Google Sans', sans-serif;
 }
 
 /* Comparison blocks */
@@ -163,6 +71,8 @@ body {
 .gcft-grid .image img {
   border-radius: 6px;
   border: 1px solid #ddd;
+  max-width: 100%;
+  height: auto;
 }
 
 /* GCFT grid */
@@ -182,16 +92,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Venue & awards in hero */
-.publication-venue {
-  color: #555;
-  font-weight: bold;
-  font-family: 'Google Sans', sans-serif;
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .comparison-block .columns .column.is-5,
+  .gcft-row-block .columns .column.is-5,
+  .gcft-grid .columns .column.is-5 {
+    width: 100%;
+  }
 }
-
-.publication-awards {
-  color: #ff3860;
-  font-weight: bolder;
-  font-family: 'Google Sans', sans-serif;
-}
-
