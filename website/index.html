@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning. CVPR 2026.">
+  <meta property="og:title" content="RLFTSim: Multi-Agent Traffic Simulation via RL Fine-Tuning"/>
+  <meta property="og:description" content="An RL-based fine-tuning framework for multi-agent traffic simulation alignment. 2nd Place Waymo SimAgent Challenge 2025."/>
+  <meta property="og:url" content="https://ehsan-ami.github.io/rlftsim"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <meta name="twitter:title" content="RLFTSim: Multi-Agent Traffic Simulation via RL Fine-Tuning">
+  <meta name="twitter:description" content="An RL-based fine-tuning framework for multi-agent traffic simulation alignment. 2nd Place Waymo SimAgent Challenge 2025.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="traffic simulation, reinforcement learning, fine-tuning, multi-agent, Waymo, CVPR 2026, autonomous driving">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RLFTSim: Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="container is-max-desktop">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="https://ehsan-ami.github.io/" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><i class="fas fa-user"></i></span>
+          <span>Ehsan Ahmadi</span>
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">Behavior Modeling Projects</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item is-active" href="#">
+              RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning
+            </a>
+            <a class="navbar-item" href="https://ehsan-ami.github.io/critic/" target="_blank" rel="noopener noreferrer">
+              CRiTIC: Curb Your Attention: Causal Attention Gating for Robust Trajectory Prediction in Autonomous Driving
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero / Title -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Ehsan Ahmadi<sup>1,2</sup>,</span>
+            <span class="author-block">Hunter Schofield<sup>2,3</sup>,</span>
+            <span class="author-block">Behzad Khamidehi<sup>2</sup>,</span>
+            <span class="author-block">Fazel Arasteh<sup>2</sup>,</span>
+            <br>
+            <span class="author-block">Jinjun Shan<sup>3</sup>,</span>
+            <span class="author-block">Lili Mou<sup>1,4</sup>,</span>
+            <span class="author-block">Dongfeng Bai<sup>2</sup>,</span>
+            <span class="author-block">Kasra Rezaee<sup>2</sup></span>
+          </div>
+
+          <div class="is-size-6 publication-authors" style="margin-top: 0.5rem;">
+            <span class="author-block"><sup>1</sup>University of Alberta,</span>
+            <span class="author-block"><sup>2</sup>Huawei Technologies Canada,</span>
+            <span class="author-block"><sup>3</sup>York University</span>
+            <br>
+            <span class="author-block"><sup>4</sup>Canada CIFAR AI Chair, Amii</span>
+          </div>
+
+          <div class="publication-venue" style="margin: 0.75rem auto;">CVPR 2026 Highlight</div>
+          <div class="publication-awards" style="margin: 0.75rem auto; color: #000;">2nd Place <a href="https://cvpr2025.wad.vision/" target="_blank" rel="noopener noreferrer" style="color: #000; text-decoration: underline;">Waymo SimAgent Challenge 2025</a></div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="static/pdfs/arxiv_2605.19033v1.pdf" target="_blank" rel="noopener noreferrer"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2605.19033" target="_blank" rel="noopener noreferrer"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/ehsan-ami/rlftsim" target="_blank" rel="noopener noreferrer"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Supervised open-loop training has been widely adopted for training traffic simulation models; however, it fails to capture the inherently dynamic, multi-agent interactions common in complex driving scenarios. We introduce <b>RLFTSim</b>, a reinforcement-learning-based fine-tuning framework that enhances scenario realism by aligning simulator rollouts with real-world data distributions and provides a method for distilling goal-conditioned controllability in scenario generation. We instantiate RLFTSim on top of a pre-trained simulation model, design a reward that balances fidelity and controllability, and perform comprehensive experiments on the Waymo Open Motion Dataset. Our results show improvements in realism, achieving state-of-the-art performance. Compared with other heuristic search-based fine-tuning methods, RLFTSim requires significantly fewer samples due to a proposed low-variance and dense reward signal, and it directly addresses the realism alignment issue by design. We also demonstrate the effectiveness of our approach for distilling traffic simulation controllability through goal conditioning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pre/Post Training Qualitative Comparison -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">Qualitative Visualization: Pre-Training vs. Post-Training</h2>
+    <p class="has-text-centered" style="margin-bottom: 2rem; color: #555;">
+      Side-by-side comparison of the base model (pre-train) and RLFTSim (post-train) on challenging traffic scenarios.
+    </p>
+
+    <!-- Figure 1: Collision & Off-road -->
+    <div class="comparison-block">
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-danger is-medium comparison-label">Pre-train</span>
+            <figure class="image">
+              <img src="static/gifs/fig_3_a2_base_model_collision_and_offroad.gif" alt="Base model: collision and off-road behavior" loading="lazy">
+            </figure>
+          </div>
+        </div>
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-success is-medium comparison-label">Post-train (RLFTSim)</span>
+            <figure class="image">
+              <img src="static/gifs/fig_3_a3_RLFTSim_no_incident.gif" alt="RLFTSim: no incident" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <p class="comparison-caption"><b>Figure 1 &mdash; Collision &amp; Off-road:</b> The pre-trained model generates unrealistic off-road behavior and a collision with cross-traffic, while the post-trained model (RLFTSim) produces realistic lane-following behavior that respects traffic rules.</p>
+    </div>
+
+    <!-- Figure S1: Collision with Pedestrian -->
+    <div class="comparison-block">
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-danger is-medium comparison-label">Pre-train</span>
+            <figure class="image">
+              <img src="static/gifs/fig_s2_b_base_model_collision_with_pedestrian.gif" alt="Base model: collision with pedestrian" loading="lazy">
+            </figure>
+          </div>
+        </div>
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-success is-medium comparison-label">Post-train (RLFTSim)</span>
+            <figure class="image">
+              <img src="static/gifs/fig_s2_c_RLFTSim_no_collision.gif" alt="RLFTSim: no collision" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <p class="comparison-caption"><b>Figure S1 &mdash; Collision 1:</b> In the pre-trained model, the vehicle entering the circle fails to yield to the pedestrian and collides with it. In the post-trained model, the vehicle yields to the pedestrian.</p>
+    </div>
+
+    <!-- Figure S2: Rear-end Collision -->
+    <div class="comparison-block">
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-danger is-medium comparison-label">Pre-train</span>
+            <figure class="image">
+              <img src="static/gifs/fig_s3_b_base_model_rear_end_collision.gif" alt="Base model: rear-end collision" loading="lazy">
+            </figure>
+          </div>
+        </div>
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-success is-medium comparison-label">Post-train (RLFTSim)</span>
+            <figure class="image">
+              <img src="static/gifs/fig_s3_c_RLFTSim_no_collision.gif" alt="RLFTSim: no collision" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <p class="comparison-caption"><b>Figure S2 &mdash; Collision 2:</b> The pre-trained model produces a rear-end collision between two vehicles at the bottom of the scene. The post-trained model avoids this accident.</p>
+    </div>
+
+    <!-- Figure S3: Parking Exit Collision -->
+    <div class="comparison-block">
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-danger is-medium comparison-label">Pre-train</span>
+            <figure class="image">
+              <img src="static/gifs/fig_s4_b_base_model_parking_exit_collision.gif" alt="Base model: parking exit collision" loading="lazy">
+            </figure>
+          </div>
+        </div>
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-success is-medium comparison-label">Post-train (RLFTSim)</span>
+            <figure class="image">
+              <img src="static/gifs/fig_s4_c_RLFTSim_no_collision.gif" alt="RLFTSim: no collision" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <p class="comparison-caption"><b>Figure S3 &mdash; Collision 3:</b> The pre-trained model's parked vehicle attempts to enter the road, colliding with a passing vehicle. The post-trained model waits for the road to clear before entering.</p>
+    </div>
+
+    <!-- Figure S4: Off-road -->
+    <div class="comparison-block">
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-danger is-medium comparison-label">Pre-train</span>
+            <figure class="image">
+              <img src="static/gifs/fig_s5_b_base_model_offroad_in_bottom_right_corner.gif" alt="Base model: cyclist off-road" loading="lazy">
+            </figure>
+          </div>
+        </div>
+        <div class="column is-5">
+          <div class="has-text-centered">
+            <span class="tag is-success is-medium comparison-label">Post-train (RLFTSim)</span>
+            <figure class="image">
+              <img src="static/gifs/fig_s5_c_RLFTSim_no_incident.gif" alt="RLFTSim: cyclist stays on road" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <p class="comparison-caption"><b>Figure S4 &mdash; Off-road:</b> The pre-trained model's cyclist goes off-road. The post-trained model (RLFTSim) adheres to the drivable area.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Goal-Conditioned Fine-Tuning (GCFT) -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">Goal-Conditioned Fine-Tuning (GCFT)</h2>
+    <p class="has-text-centered" style="margin-bottom: 2rem; color: #555;">
+      Controllability via goal-conditioning. The goal point is shown as a <span style="color: #e040a0; font-weight: bold;">magenta circle</span>. We compare various goal representations.
+    </p>
+
+    <!-- GCFT grid: 3 rows (Pre-train, cat-hard, ind-hard) x 2 cols (U-turn, Left-turn) -->
+    <div class="gcft-grid">
+      <!-- Header row -->
+      <div class="columns is-centered has-text-centered" style="margin-bottom: 0;">
+        <div class="column is-5 is-offset-1"><strong>U-Turn Goal</strong></div>
+        <div class="column is-5"><strong>Left-Turn Goal</strong></div>
+      </div>
+
+      <!-- Row 1: Pre-train -->
+      <div class="gcft-row-block">
+        <div class="has-text-centered" style="margin-bottom: 0.5rem;">
+          <span class="tag is-danger is-medium">Pre-train (base model)</span>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_3_b1_base_model_u_turn.gif" alt="Pre-train: U-turn" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Successful U-Turn</p>
+          </div>
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_3_b4_base_model_fail_to_left_turn.gif" alt="Pre-train: failed left turn" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Failed Left Turn</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Post-train (cat, hard) -->
+      <div class="gcft-row-block">
+        <div class="has-text-centered" style="margin-bottom: 0.5rem;">
+          <span class="tag is-success is-medium">Post-train &mdash; concatenation, hard goal</span>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_3_b2_RLFTSim_GCFT_hard_u_turn.gif" alt="GCFT cat-hard: U-turn" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Successful U-Turn</p>
+          </div>
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_3_b5_RLFTSim_GCFT-hard_left_turn.gif" alt="GCFT cat-hard: left turn" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Successful Left Turn</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Post-train (ind, hard) -->
+      <div class="gcft-row-block">
+        <div class="has-text-centered" style="margin-bottom: 0.5rem;">
+          <span class="tag is-info is-medium">Post-train &mdash; indication, hard goal</span>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_3_b3_RLFTSim_GCFT_ind_u_turn.gif" alt="GCFT ind-hard: U-turn" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Successful U-Turn</p>
+          </div>
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_3_b6_RLFTSim_GCFT_ind_left_turn.gif" alt="GCFT ind-hard: left turn" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Successful Left Turn</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="comparison-caption has-text-centered" style="margin-top: 1rem;">
+      <b>Figure 1 (right) &mdash; GCFT Visualization.</b> The goal point is shown with a magenta circle. We show results for concatenation (cat) and edge-indication (ind) goal representations with hard goal targets. The pre-trained model fails at the left turn, while both GCFT variants succeed.
+    </p>
+  </div>
+</section>
+
+<!-- Additional GCFT: Traffic Rules & Parking -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-4 has-text-centered section-heading">GCFT: Traffic Rules &amp; Parking Scenarios</h2>
+
+    <!-- Traffic Lights -->
+    <h3 class="title is-5" style="margin-top: 1.5rem;">Traffic Light Compliance</h3>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <figure class="image">
+          <img src="static/gifs/fig_s6_a-stop_at_red.gif" alt="GCFT: stop at red light" loading="lazy">
+        </figure>
+        <p class="has-text-centered is-size-7 has-text-grey">Stop at Red Light</p>
+      </div>
+      <div class="column is-5">
+        <figure class="image">
+          <img src="static/gifs/fig_s6_b-right_at_red.gif" alt="GCFT: right turn at red" loading="lazy">
+        </figure>
+        <p class="has-text-centered is-size-7 has-text-grey">Right Turn at Red</p>
+      </div>
+    </div>
+
+    <!-- Stop Signs -->
+    <h3 class="title is-5" style="margin-top: 1.5rem;">Stop Sign Behavior</h3>
+    <div class="columns is-centered">
+      <div class="column is-5">
+        <figure class="image">
+          <img src="static/gifs/fig_s7_a-stop_sign_right.gif" alt="GCFT: stop sign right turn" loading="lazy">
+        </figure>
+        <p class="has-text-centered is-size-7 has-text-grey">Right Turn at Stop Sign</p>
+      </div>
+      <div class="column is-5">
+        <figure class="image">
+          <img src="static/gifs/fig_s7_b-stop_sign_left.gif" alt="GCFT: stop sign left turn" loading="lazy">
+        </figure>
+        <p class="has-text-centered is-size-7 has-text-grey">Left Turn at Stop Sign</p>
+      </div>
+    </div>
+
+    <!-- Parking -->
+    <h3 class="title is-5" style="margin-top: 1.5rem;">Parking Maneuvers</h3>
+    <div class="columns is-centered is-multiline">
+      <div class="column is-3">
+        <figure class="image">
+          <img src="static/gifs/fig_s8_a-parking_move_forward.gif" alt="GCFT: parking move forward" loading="lazy">
+        </figure>
+        <p class="has-text-centered is-size-7 has-text-grey">Move Forward</p>
+      </div>
+      <div class="column is-3">
+        <figure class="image">
+          <img src="static/gifs/fig_s8_b-parking_stationary.gif" alt="GCFT: parking stationary" loading="lazy">
+        </figure>
+        <p class="has-text-centered is-size-7 has-text-grey">Stationary</p>
+      </div>
+      <div class="column is-3">
+        <figure class="image">
+          <img src="static/gifs/fig_s8_c-parking_right1.gif" alt="GCFT: parking right turn 1" loading="lazy">
+        </figure>
+        <p class="has-text-centered is-size-7 has-text-grey">Right Turn 1</p>
+      </div>
+      <div class="column is-3">
+        <figure class="image">
+          <img src="static/gifs/fig_s8_d-parking_right2.gif" alt="GCFT: parking right turn 2" loading="lazy">
+        </figure>
+        <p class="has-text-centered is-size-7 has-text-grey">Right Turn 2</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Model Checkpoints -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Model Checkpoints</h2>
+    <div class="content has-text-centered">
+      <p>
+        We are happy to share the RLFTSim checkpoints used in our WOSAC submission.
+        To request access, please reach out to
+        <span style="color: hsl(204, 86%, 53%); font-weight: bold;">[eahmadi at ualberta dot ca]</span>.
+        Due to Waymo's data usage policy, we ask that you provide a screenshot confirming your registration on the
+        <b>My Submissions</b> page of the Waymo Open Dataset.
+        Our checkpoints are built on top of the SMART-tiny architecture. For inference, you can use the codebases from
+        <a href="https://github.com/NVlabs/catk" target="_blank" rel="noopener noreferrer" style="color: hsl(204, 86%, 53%); text-decoration: underline;">CAT-K</a> or
+        <a href="https://github.com/rainmaker22/SMART" target="_blank" rel="noopener noreferrer" style="color: hsl(204, 86%, 53%); text-decoration: underline;">SMART</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section hero is-light" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@inproceedings{ahmadi2026rlftsim,
+  title     = {{RLFTSim}: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning},
+  author    = {Ahmadi, Ehsan and Schofield, Hunter and Khamidehi, Behzad and Arasteh, Fazel and Shan, Jinjun and Mou, Lili and Bai, Dongfeng and Rezaee, Kasra},
+  booktitle = {CVPR},
+  year      = {2026},
+  note      = {arXiv:2605.19033},
+}</code></pre>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page.
+            This website is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var burger = document.querySelector('.navbar-burger');
+  if (burger) {
+    burger.addEventListener('click', function() {
+      var target = document.getElementById(burger.dataset.target);
+      burger.classList.toggle('is-active');
+      target.classList.toggle('is-active');
+    });
+  }
+});
+</script>
+
+</body>
+</html>

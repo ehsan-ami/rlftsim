@@ -1,0 +1,102 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%);
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+/* Venue & awards in hero */
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-awards {
+  width: fit-content;
+  font-weight: bolder;
+  font-family: 'Google Sans', sans-serif;
+}
+
+/* Comparison blocks */
+.comparison-block {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comparison-block:last-child {
+  border-bottom: none;
+}
+
+.comparison-label {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.comparison-caption {
+  margin-top: 0.75rem;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comparison-block .image img,
+.gcft-grid .image img {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  max-width: 100%;
+  height: auto;
+}
+
+/* GCFT grid */
+.gcft-row-block {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.gcft-row-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* Section headings */
+.section-heading {
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .comparison-block .columns .column.is-5,
+  .gcft-row-block .columns .column.is-5,
+  .gcft-grid .columns .column.is-5 {
+    width: 100%;
+  }
+}
