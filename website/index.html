@@ -114,12 +114,31 @@
                 <span>Code</span>
                 </a>
               </span>
+              <span class="link-block">
+                <a href="static/pdfs/RLFTSim_poster.pdf" target="_blank" rel="noopener noreferrer"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-image"></i></span>
+                <span>Poster</span>
+                </a>
+              </span>
             </div>
           </div>
 
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Teaser -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <figure class="image">
+      <img src="static/images/RLFTSim_teaser.png" alt="RLFTSim post-training pipeline overview" style="width: 100%; max-width: 900px; margin: 0 auto; display: block;">
+    </figure>
+    <p class="has-text-justified" style="margin-top: 1rem; color: #555; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <b>RLFTSim post-training pipeline.</b> We fine-tune a pre-trained simulator with closed-loop, on-policy RL to match the real-world distribution across kinematic, interactive, and map-based features. Our key contribution is <b>MLOO</b>, a <b>dense, low-variance, per-rollout reward</b> built from a leave-one-out construction over the realism meta-metric &mdash; making fine-tuning sample-efficient and stable. An optional goal input with a goal-attainment reward further distills <b>controllability</b> without sacrificing realism.
+    </p>
   </div>
 </section>
 
@@ -135,6 +154,22 @@
           </p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Presentation Video -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">Presentation Video</h2>
+    <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 0 auto;">
+      <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="https://www.youtube.com/embed/6Bcv0eL_sQY"
+              title="RLFTSim Presentation Video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -418,6 +453,21 @@
         <p class="has-text-centered is-size-7 has-text-grey">Right Turn 2</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Poster -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered section-heading">Poster</h2>
+    <p class="has-text-centered" style="margin-bottom: 1.5rem; color: #555;">
+      <a href="static/pdfs/RLFTSim_poster.pdf" target="_blank" rel="noopener noreferrer">Download the poster (PDF)</a>
+    </p>
+    <figure class="image">
+      <a href="static/pdfs/RLFTSim_poster.pdf" target="_blank" rel="noopener noreferrer">
+        <img src="static/images/RLFTSim_Poster.png" alt="RLFTSim CVPR 2026 poster" loading="lazy" style="width: 100%; border: 1px solid #ddd;">
+      </a>
+    </figure>
   </div>
 </section>
 
