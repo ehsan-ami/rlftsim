@@ -82,14 +82,17 @@
 
           <div class="is-size-6 publication-authors" style="margin-top: 0.5rem;">
             <span class="author-block"><sup>1</sup>University of Alberta,</span>
-            <span class="author-block"><sup>2</sup>Huawei Technologies Canada,</span>
-            <span class="author-block"><sup>3</sup>York University</span>
+            <span class="author-block"><sup>2</sup>Huawei Technologies Canada</span>
             <br>
+            <span class="author-block"><sup>3</sup>York University,</span>
             <span class="author-block"><sup>4</sup>Canada CIFAR AI Chair, Amii</span>
           </div>
 
           <div class="publication-venue" style="margin: 0.75rem auto;">CVPR 2026 Highlight</div>
-          <div class="publication-awards" style="margin: 0.75rem auto; color: #000;">2nd Place <a href="https://cvpr2025.wad.vision/" target="_blank" rel="noopener noreferrer" style="color: #000; text-decoration: underline;">Waymo SimAgent Challenge 2025</a></div>
+          <div class="publication-awards" style="margin: 0.75rem auto; color: #000; line-height: 1.5;">
+            <img src="static/images/trophy-icon.svg" alt="" aria-hidden="true" style="height: 4.8em; width: auto; vertical-align: middle; margin: -1.8em 0.4rem -1.8em 0; position: relative; top: -0.6em;">
+            <span>2nd Place <a href="https://cvpr2025.wad.vision/" target="_blank" rel="noopener noreferrer" style="color: #000; text-decoration: underline;">Waymo SimAgent Challenge 2025</a></span>
+          </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -119,6 +122,13 @@
                 class="external-link button is-normal is-rounded is-dark">
                 <span class="icon"><i class="fas fa-image"></i></span>
                 <span>Poster</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=6Bcv0eL_sQY" target="_blank" rel="noopener noreferrer"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-youtube"></i></span>
+                <span>Video</span>
                 </a>
               </span>
             </div>
@@ -389,68 +399,85 @@
 <!-- Additional GCFT: Traffic Rules & Parking -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-4 has-text-centered section-heading">GCFT: Traffic Rules &amp; Parking Scenarios</h2>
+    <h2 class="title is-3 has-text-centered section-heading">GCFT: Traffic Rules &amp; Parking Scenarios</h2>
+    <p class="has-text-centered" style="margin-bottom: 2rem; color: #555;">
+      Goal-conditioning also distills compliance with traffic rules and fine-grained parking maneuvers from a single pre-trained simulator.
+    </p>
 
-    <!-- Traffic Lights -->
-    <h3 class="title is-5" style="margin-top: 1.5rem;">Traffic Light Compliance</h3>
-    <div class="columns is-centered">
-      <div class="column is-5">
-        <figure class="image">
-          <img src="static/gifs/fig_s6_a-stop_at_red.gif" alt="GCFT: stop at red light" loading="lazy">
-        </figure>
-        <p class="has-text-centered is-size-7 has-text-grey">Stop at Red Light</p>
+    <div class="gcft-grid">
+      <!-- Traffic Lights -->
+      <div class="gcft-row-block">
+        <div class="has-text-centered" style="margin-bottom: 0.5rem;">
+          <span class="tag is-warning is-medium">Traffic Light Compliance</span>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_s6_a-stop_at_red.gif" alt="GCFT: stop at red light" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Stop at Red Light</p>
+          </div>
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_s6_b-right_at_red.gif" alt="GCFT: right turn at red" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Right Turn at Red</p>
+          </div>
+        </div>
       </div>
-      <div class="column is-5">
-        <figure class="image">
-          <img src="static/gifs/fig_s6_b-right_at_red.gif" alt="GCFT: right turn at red" loading="lazy">
-        </figure>
-        <p class="has-text-centered is-size-7 has-text-grey">Right Turn at Red</p>
-      </div>
-    </div>
 
-    <!-- Stop Signs -->
-    <h3 class="title is-5" style="margin-top: 1.5rem;">Stop Sign Behavior</h3>
-    <div class="columns is-centered">
-      <div class="column is-5">
-        <figure class="image">
-          <img src="static/gifs/fig_s7_a-stop_sign_right.gif" alt="GCFT: stop sign right turn" loading="lazy">
-        </figure>
-        <p class="has-text-centered is-size-7 has-text-grey">Right Turn at Stop Sign</p>
+      <!-- Stop Signs -->
+      <div class="gcft-row-block">
+        <div class="has-text-centered" style="margin-bottom: 0.5rem;">
+          <span class="tag is-danger is-medium">Stop Sign Behavior</span>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_s7_a-stop_sign_right.gif" alt="GCFT: stop sign right turn" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Right Turn at Stop Sign</p>
+          </div>
+          <div class="column is-5">
+            <figure class="image">
+              <img src="static/gifs/fig_s7_b-stop_sign_left.gif" alt="GCFT: stop sign left turn" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Left Turn at Stop Sign</p>
+          </div>
+        </div>
       </div>
-      <div class="column is-5">
-        <figure class="image">
-          <img src="static/gifs/fig_s7_b-stop_sign_left.gif" alt="GCFT: stop sign left turn" loading="lazy">
-        </figure>
-        <p class="has-text-centered is-size-7 has-text-grey">Left Turn at Stop Sign</p>
-      </div>
-    </div>
 
-    <!-- Parking -->
-    <h3 class="title is-5" style="margin-top: 1.5rem;">Parking Maneuvers</h3>
-    <div class="columns is-centered is-multiline">
-      <div class="column is-3">
-        <figure class="image">
-          <img src="static/gifs/fig_s8_a-parking_move_forward.gif" alt="GCFT: parking move forward" loading="lazy">
-        </figure>
-        <p class="has-text-centered is-size-7 has-text-grey">Move Forward</p>
-      </div>
-      <div class="column is-3">
-        <figure class="image">
-          <img src="static/gifs/fig_s8_b-parking_stationary.gif" alt="GCFT: parking stationary" loading="lazy">
-        </figure>
-        <p class="has-text-centered is-size-7 has-text-grey">Stationary</p>
-      </div>
-      <div class="column is-3">
-        <figure class="image">
-          <img src="static/gifs/fig_s8_c-parking_right1.gif" alt="GCFT: parking right turn 1" loading="lazy">
-        </figure>
-        <p class="has-text-centered is-size-7 has-text-grey">Right Turn 1</p>
-      </div>
-      <div class="column is-3">
-        <figure class="image">
-          <img src="static/gifs/fig_s8_d-parking_right2.gif" alt="GCFT: parking right turn 2" loading="lazy">
-        </figure>
-        <p class="has-text-centered is-size-7 has-text-grey">Right Turn 2</p>
+      <!-- Parking -->
+      <div class="gcft-row-block">
+        <div class="has-text-centered" style="margin-bottom: 0.5rem;">
+          <span class="tag is-info is-medium">Parking Maneuvers</span>
+        </div>
+        <div class="columns is-centered is-multiline">
+          <div class="column is-3">
+            <figure class="image">
+              <img src="static/gifs/fig_s8_a-parking_move_forward.gif" alt="GCFT: parking move forward" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Move Forward</p>
+          </div>
+          <div class="column is-3">
+            <figure class="image">
+              <img src="static/gifs/fig_s8_b-parking_stationary.gif" alt="GCFT: parking stationary" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Stationary</p>
+          </div>
+          <div class="column is-3">
+            <figure class="image">
+              <img src="static/gifs/fig_s8_c-parking_right1.gif" alt="GCFT: parking right turn 1" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Right Turn 1</p>
+          </div>
+          <div class="column is-3">
+            <figure class="image">
+              <img src="static/gifs/fig_s8_d-parking_right2.gif" alt="GCFT: parking right turn 2" loading="lazy">
+            </figure>
+            <p class="has-text-centered is-size-7 has-text-grey">Right Turn 2</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
